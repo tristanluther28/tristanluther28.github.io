@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/hover.zoom.js"></script>
+    <script src="assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Projects</a></li>
+            <li><a href="assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>ARDUINO UNO ISP</h2>
+				<hr>
+				<p style="text-align:left;">Arduinos are a great introduction to microcontrollers for starting electronics hobbyists. 
+				They are plug-and-play development environments that can introduce a plethora of 
+				topics about electronics, awesome right! The main model produced by Arduino, 
+				called the Arduino Uno, uses the Atmel 328P Microcontroller as the main brain 
+				on-board. Its stock package type is a large 28-pin DIP package. Very large and 
+				gives an excess of I/O pins that won’t be utilized in many projects. Atmel produces 
+				other smaller sized DIP package microcontrollers, the 14-pin Attiny84 and the 
+				8-pin Attiny85 are two of the most popular. 
+				<br><br>The problem is that when you buy these microcontrollers from your distributer 
+				they are not automatically ready to be given instruction sets. A bootloader must 
+				be burned to these microcontroller chips before they are ready to be programmed. 
+				Also, if you want to write programs to these microcontrollers you would have to 
+				remove the stock 28-pin microcontroller every time you put a new chip in. This 
+				will eventually lead you to damaging an IC chip. 
+				<br><br>A solution is to use an ISP (In-System Programmer) to burn the bootloader and 
+				put your program on the chip. This can be done externally on a breadboard, but 
+				that’s a hassle. You have to get the breadboard, jumper wires, and be sure that 
+				you are hooking up to your main Arduino Uno unit every time (Here’s the article 
+				on Arduino’s website describing this process in more depth: <a href="https://www.arduino.cc/en/Tutorial/ArduinoISP">ArduinoISP</a>). 
+				<br><br>Rather than doing that I made an Arduino Shield, which is just a separate 
+				printed circuit board that sits on top of the Arduino Uno, that can program 28-pin 
+				Atmel chips, 14-pin Atmel chips, and 8-pin Atmel chips. The shield was designed 
+				in Eagle CAD and features three indicator LEDs that display when the chip is being 
+				programmed, has an error, and Heartbeat (To show that the chip in responding normally). 
+				<br><br>The shield was marked with “Swallowtail Electronics” on top. This is a small 
+				business I have started and am working on. More to come on that.
+				</p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive.center" src="assets/img/projects/isp/isp.PNG" alt=""></p>
+				<p> Here's the Bill Of Materials for this project
+				  <table>
+  					<tr>
+    					<th>BOM Item #</th>
+    					<th>Item Name</th>
+    					<th>Quantity</th>
+    					<th>Price/Unit</th>
+    					<th>Total Cost</th>
+  					</tr>
+  					<tr>
+    					<td>1</td>
+    					<td>PCB Manufacturing</td>
+    					<td>1</td>
+    					<td>$10.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>2</td>
+    					<td>220&#8486; Resistor</td>
+    					<td>3</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>3</td>
+    					<td>28-Pin DIP Socket</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>4</td>
+    					<td>14-Pin DIP Socket</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>5</td>
+    					<td>8-Pin DIP Socket</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>6</td>
+    					<td>5MM LED</td>
+    					<td>3</td>
+    					<td>$0.75</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>7</td>
+    					<td>40ct. Male Header Pins</td>
+    					<td>1</td>
+    					<td>$1.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>8</td>
+    					<td>10&#181;F Capacitor</td>
+    					<td>1</td>
+    					<td>$0.35</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td>$15.25</td>
+  					</tr>
+				</table>
+				</p>
+				<p><bt>This article was last edited: <a href="#">August 2018</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						(805)630-6939<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

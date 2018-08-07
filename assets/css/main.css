@@ -1,0 +1,403 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: STANLEY - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ *
+ * Modified by: Tristan Luther
+ */
+
+@import "https://fonts.googleapis.com/css?family=Ubuntu";
+
+@import "https://fonts.googleapis.com/css?family=Source+Code+Pro";
+
+@import "https://fonts.googleapis.com/css?family=Comfortaa";
+
+@font-family{
+	font-family: "willow";
+  src: url(assets/fonts/willow.woff) format('woff'),
+  	   url(assets/fonts/willow.woff2) format('woff2'),
+       url(assets/fonts/willow.eot) format('embedded-opentype'),
+       url(assets/fonts/willow.tff) format('truetype'),
+       url(assest/fonts/willow.svg#willow) format('svg');
+       
+}
+
+body {
+  	background-color: #FFF8DC;
+  	font-family: 'Ubuntu', serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    
+}
+
+/* Titles */
+h2{
+	font-family: 'Comfortaa','Source+Code+Pro', serif;
+	font-size: 40px;
+	color: #333;
+}
+h4{
+	font-family: 'Comfortaa','Source+Code+Pro', serif;
+	font-size: 22px;
+	color: #333;
+}
+h1, h3, h6 {
+	font-family: 'Ubuntu', serif;
+    font-weight: 700;
+    color: #333;
+}
+
+h1 {
+	font-family: 'Comfortaa','Source+Code+Pro', serif;
+	font-size: 35px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+h5{
+	font-family: 'Comfortaa','Source+Code+Pro', serif;
+	font-size: 40px;
+}
+
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+li2{
+	display: list-item;
+	font-size: 16px;
+	text-align: left;
+}
+table, th, td {
+    border: 2px solid black;
+    align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article {
+	line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    text-align: left;
+}
+.centered {
+    text-align: center;
+}
+.right {
+	text-align: right;
+}
+/* Links */
+a {
+    color: #0645AD;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+.navbar {
+	text-transform: uppercase;
+	margin-bottom: 0px;
+}
+.navbar-nav{
+	padding-bottom: 2.0%;
+	padding-top: 2.0%;
+}
+.navbar-inverse {
+	padding-bottom: 0.5%;
+	padding-top: 0.5%;
+}
+
+.navbar-inverse {
+	background-color: #006600;
+	border-color: #26462b;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #222222;
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: transparent;
+}
+
+.progress-bar-theme {
+  background-color: #006600;
+}
+
+
+/* Helpers */
+
+.mt {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.pt {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+img.a {
+    vertical-align: text-top;
+    float: left;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+/* +++++ WRAP SECTIONS +++++ */
+
+#ww {
+	padding-top: 70px;
+	padding-bottom: 70px;
+	background-color: #FFF8DC;
+}
+
+
+#footer {
+	background-color: #2f2f2f;
+	padding-top: 50px;
+	padding-bottom: 50px; 
+}
+
+#footer p {
+	color: white;
+}
+
+#footer h4 {
+	color: white;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+}
+
+
+/* +++++ Color Wraps / Blog Page +++++ */
+
+#grey {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #F2E2CD;
+}
+
+#white {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #FFF8DC;
+}
+
+
+
+/* Blog Date*/
+bd {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #d2d2d2;
+	font-weight: 700;
+}
+
+/* Blog Author*/
+ba {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* Blog Quote */
+.bq {
+	font-size: 22px;
+	padding-top: 30px;
+}
+
+/* Blog Tags */
+bt {
+	font-size: 12px;
+}
+
+/* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
+/* Effects also are controled by hover.zoom.js */
+.zoom { 
+    display:block; 
+    position:relative; 
+    overflow:hidden; 
+    background:transparent url(../img/loader.gif) no-repeat center;
+}
+
+
+    .zoomOverlay {
+        position:absolute;
+        top:0; left:0;
+        bottom:0; right:0;
+        display:none;
+        background-image:url(../img/zoom.png);
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+
+.zoom2 {
+	opacity: 1;
+}
+
+.zoom2:hover {
+	opacity: 0.5;
+}
+
+/* glyphicon Configuration */
+
+.glyphicon {
+	font-size: 40px;
+	color: #006600;
+}
+
+/* Sildeshow Configuration */
+
+        .slider-holder
+        {
+            width: 800px;
+            height: 600px;
+            background-color: #006600;
+
+            margin-top: 0px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .image-holder
+        {
+            width: 2400px;
+            background-color: #FFFFFF;
+            height: 600px;
+            clear: both;
+            position: relative;
+            
+            -webkit-transition: left 2s;
+            -moz-transition: left 2s;
+            -o-transition: left 2s;
+            transition: left 2s;
+        }
+        
+        .slider-image
+        {
+            float: left;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+        }
+        
+        #slider-image-1:target ~ .image-holder
+        {
+            left: 0px;
+        }
+        
+        #slider-image-2:target ~ .image-holder
+        {
+            left: -800px;
+        }
+        
+        #slider-image-3:target ~ .image-holder
+        {
+            left: -1600px;
+        }
+        
+        .button-holder
+        {
+            position: relative;
+            top: -20px;
+        }
+        
+        .slider-change
+        {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-radius: 5px;
+            background-color: #D3D3D3;
+        }
+ 
+/* Quiz Formatting */
+.bodyQuiz{
+	font-size: 20px;
+	font-family: 'Ubuntu', serif;
+	color: #333;
+}
+.question{
+	float: left;
+}
+.answers {
+    margin-bottom: 20px;
+    
+}
+.submit{
+	font-family: 'Comfortaa', 'Source+Code+Pro', serif;
+	font-size: 20px;
+	background-color: #328432;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+#submit:hover{
+	background-color: #006600;
+}
+
+/* Snake Stuff */

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/hover.zoom.js"></script>
+    <script src="assets/js/hover.zoom.conf.js"></script>
+	<script src="assets/js/quiz.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Projects</a></li>
+            <li><a href="assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>ELECTRONICS QUIZ</h2>
+				<hr>
+				<p>Here's a little quiz about electronics and computers I made a while back. Remade in Javascript.
+				Quiz yourself or your friends! Here's the link to the original copy in a<a href="assets/pdf/ECEQuiz.pdf" target="blank_">
+				printer friendly pdf version.</a></p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-8 col-lg-offset-2">
+				<div class="bodyQuiz">
+						<ol>
+						  <li>
+						    <h3>What electrical component stores energy in an electric field?</h3>
+						    <div id=".answers0" class="answers">
+						    	<input type="radio" name="question0" value="A">Resistor<br>
+						    	<input type="radio" name="question0" value="B">Capacitor<br>
+						    	<input type="radio" name="question0" value="C">Inductor<br>
+						    	<input type="radio" name="question0" value="D">Diode<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>Which of the following battery types is not rechargable?</h3>
+						    <div id=".answers1" class="answers">
+						    <input type="radio" name="question1" value="A">Nickel-Cadmium<br>
+						    <input type="radio" name="question1" value="B">Carbon-Zinc<br>
+						    <input type="radio" name="question1" value="C">Lead-Acid<br>
+						    <input type="radio" name="question1" value="D">Lithium-Ion<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>How is the cathode lead of a semiconductor diode usually identified?</h3>
+						    <div id=".answers2" class="answers">
+						    <input type="radio" name="question2" value="A">With the word cathode<br>
+						    <input type="radio" name="question2" value="B">With a stripe<br>
+						    <input type="radio" name="question2" value="C">With the letter C<br>
+						    <input type="radio" name="question2" value="D">All of the above<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>What electrical component stores energy in a magnetic field?</h3>
+						    <div id=".answers3" class="answers">
+						    <input type="radio" name="question3" value="A">Resistor<br>
+						    <input type="radio" name="question3" value="B">Capacitor<br>
+						    <input type="radio" name="question3" value="C">Inductor<br>
+						    <input type="radio" name="question3" value="D">Diode<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>If the numbers 104 are on a ceramic capacitor what is its value?</h3>
+						    <div id=".answers4" class="answers">
+						    <input type="radio" name="question4" value="A">0.1uF<br>
+						    <input type="radio" name="question4" value="B">1000pF<br>
+						    <input type="radio" name="question4" value="C">1nF<br>
+						    <input type="radio" name="question4" value="D">10uF<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>What is the electrical term for the electromotive force(EMF) that causes electron flow?</h3>
+						    <div id=".answers5" class="answers">
+						    <input type="radio" name="question5" value="A">Voltage<br>
+						    <input type="radio" name="question5" value="B">Ampere-Hour<br>
+						    <input type="radio" name="question5" value="C">Capacitance<br>
+						    <input type="radio" name="question5" value="D">Inductance<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>Which of the following is used together with an inductor to make a tuned circuit?</h3>
+						    <div id=".answers6" class="answers">
+						    <input type="radio" name="question6" value="A">Resistor<br>
+						    <input type="radio" name="question6" value="B">Zener Diode<br>
+						    <input type="radio" name="question6" value="C">Potentiometer<br>
+						    <input type="radio" name="question6" value="D">Capacitor<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>If a resistor has the color blue, grey, orange(in that order) what is its value?</h3>
+						    <div id=".answers7" class="answers">
+						    <input type="radio" name="question7" value="A">690 Ohms<br>
+						    <input type="radio" name="question7" value="B">68K Ohms<br>
+						    <input type="radio" name="question7" value="C">5.7K Ohms<br>
+						    <input type="radio" name="question7" value="D">570K Ohms<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>What type electrical component consists of two or more conductive surfaces separated by an insulator?</h3>
+						    <div id=".answers8" class="answers">
+						    <input type="radio" name="question8" value="A">Resistor<br>
+						    <input type="radio" name="question8" value="B">Potentiometer<br>
+						    <input type="radio" name="question8" value="C">Oscillator<br>
+						    <input type="radio" name="question8" value="D">Capacitor<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>What is the output of this XOR gate?</h3>
+						    <image src="assets/img/quiz/xor.PNG" alt="xor" style="border:3px solid black">
+						    <div id=".answers9" class="answers">
+						    <input type="radio" name="question9" value="A">1<br>
+						    <input type="radio" name="question9" value="B">0<br>
+						    <input type="radio" name="question9" value="C">2<br>
+						    <input type="radio" name="question9" value="D">-1<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>What does this symbol represent?</h3>
+						    <image src="assets/img/quiz/yes.png" alt="What is it?" style="border:3px solid black">
+						    <div id=".answers10" class="answers">
+						    <input type="radio" name="question10" value="A">Darlington Transistor<br>
+						    <input type="radio" name="question10" value="B">MOSFET<br>
+						    <input type="radio" name="question10" value="C">2N2222 Transistor<br>
+						    <input type="radio" name="question10" value="D">Diode++<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>Who invented AC?</h3>
+						    <div id=".answers11" class="answers">
+						    <input type="radio" name="question11" value="A">Michael Faraday<br>
+						    <input type="radio" name="question11" value="B">William Shockley<br>
+						    <input type="radio" name="question11" value="C">Nikola Tesla<br>
+						    <input type="radio" name="question11" value="D">Alessando Volta<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>What is the output of this logic network?</h3>
+						    <div id=".answers12" class="answers">
+						    <image src="assets/img/quiz/gates.PNG" alt="xor" style="border:3px solid black">
+						    </br>
+						    <input type="radio" name="question12" value="A">True<br>
+						    <input type="radio" name="question12" value="B">False<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>15mA of current would be flowing through a 330ohm resistor with a 5 volt source.</h3>
+						    <div id=".answers13" class="answers">
+						    <input type="radio" name="question13" value="A">True<br>
+						    <input type="radio" name="question13" value="B">False<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>The first battery was dated back to 250 BCE and was suspected to be used to electroplate statues.</h3>
+						    <div id=".answers14" class="answers">
+						    <input type="radio" name="question14" value="A">True<br>
+						    <input type="radio" name="question14" value="B">False<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>High voltage won't kill you, only high current.</h3>
+						    <div id=".answers15" class="answers">
+						    <input type="radio" name="question15" value="A">True<br>
+						    <input type="radio" name="question15" value="B">False<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>The first LED produced was a blue LED.</h3>
+						    <div id=".answers16" class="answers">
+						    <input type="radio" name="question16" value="A">True<br>
+						    <input type="radio" name="question16" value="B">False<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>PWM is identical to an Analog signal.</h3>
+						    <div id=".answers17" class="answers">
+						    <input type="radio" name="question17" value="A">True<br>
+						    <input type="radio" name="question17" value="B">False<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>1 Ampere is equivalent to 1 Coulomb/Second.</h3>
+						    <div id=".answers18" class="answers">
+						    <input type="radio" name="question18" value="A">True<br>
+						    <input type="radio" name="question18" value="B">False<br>
+						    </div>
+						  </li>
+						  <li>
+						    <h3>The voltage required across a LED is always 2.2V(regardless of color).</h3>
+						    <div id=".answers19" class="answers">
+						    <input type="radio" name="question19" value="A">True<br>
+						    <input type="radio" name="question19" value="B">False<br>
+						    </div>
+						  </li>
+						  </div>
+						</ol>
+						</br>
+					<button class="submit" onclick="returnScore()">Check Answers</button>
+					</br>
+					<h4 id=".result"></h4>
+					<img id=".pic">
+					<h4 id=".post"></h4>
+					</br>
+					<button class="submit" onclick="reload()">Retake Quiz</button>
+					<p><bt>This article was last edited: <a href="#">March 2018</a></bt></p>
+				</div>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						(805)630-6939<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

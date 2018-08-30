@@ -1,7 +1,7 @@
 window.onload=function() {
 	canv=document.getElementById("gc");
 	ctx=canv.getContext("2d");
-	setInterval(game,1000/15);
+	setInterval(game,1000/speed);
 }
 
 function play(){
@@ -17,6 +17,17 @@ function end(){
 	xv=yv=0;
 	trail=[];
 	tail = 5;
+	points = max;
+}
+
+function reset(){
+	px=py=10;
+	gs=tc=20;
+	ax=ay=15;
+	xv=yv=0;
+	trail=[];
+	tail = 5;
+	points = max;
 }
 
 px=py=10;
@@ -25,11 +36,15 @@ ax=ay=15;
 xv=yv=0;
 trail=[];
 tail = 5;
+points = 0;
+max = 0;
+speed = 10;
 
 function game() {
 	px+=xv;
 	py+=yv;
-	if(px<0) {
+	//Unbounded Map
+	/*if(px<0) {      
 		px= tc-1;
 	}
 	if(px>tc-1) {
@@ -40,6 +55,10 @@ function game() {
 	}
 	if(py>tc-1) {
 		py= 0;
+	}*/
+	//Bounded Map
+	if(px<-1 || px>tc || py<-1 || py>tc){
+		reset();
 	}
 	ctx.fillStyle="black";
 	ctx.fillRect(0,0,canv.width,canv.height);
@@ -49,6 +68,7 @@ function game() {
 		ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
 		if(trail[i].x==px && trail[i].y==py) {
 			tail = 5;
+			points = 0;
 		}
 	}
 	trail.push({x:px,y:py});
@@ -58,11 +78,17 @@ function game() {
 
 	if(ax==px && ay==py) {
 		tail++;
+		points++;
 		ax=Math.floor(Math.random()*tc);
 		ay=Math.floor(Math.random()*tc);
+		if(points >= max){
+			max = points;
+		}		
 	}
 	ctx.fillStyle="red";
 	ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+	document.getElementById(".high").innerHTML = "High Score: " + max;
+	document.getElementById(".score").innerHTML = "Current Score: " + points;
 }
 function keyPush(evt) {
 	switch(evt.keyCode) {

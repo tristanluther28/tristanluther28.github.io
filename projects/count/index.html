@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-10 col-lg-offset-1 centered">
+				<h2>8-Bit Binary Counter</h2>
+				<hr>
+				<p style="text-align:left;">This was a nice weekend project that came out of a result of me doing 
+                    some spring cleaning in my components parts box. By the time I had moved 
+                    all my component to the new parts box I found some old LEDs that had a 
+                    strange width to their anode and cathode leads. The leads measured 0.80mm 
+                    as opposed to the typical 0.25mm found on most generic 5mm LEDs. Strange, 
+                    and not too helpful since the increased width does not fit in the protoboards 
+                    I have. As I was about to throw these basket case LEDs out I noticed…1,2,3,4,5,6,7,8! 
+                    There were exactly eight weird LEDs! A perfect byte. I couldn’t get rid of these now. 
+                    This had to be something fun involving a byte. I decided that a binary counter would 
+                    be a fun and quick weekend project that I could keep on my desk as a novelty. The idea 
+                    would be that the LED display would count from 0 to 255 and then reset to 0 and the 
+                    cycle continues. Simple!<br>
+                </p>
+                <p style="text-align:left;">Next came thinking of components. A microcontroller could solve 
+                    this problem in an instant, but what fun is that? Also, that comes at such a great cost 
+                    for such a simple function. In the spirit of this project everything was going to come 
+                    from the component box, no programming or intense processing behind it.<br>
+                </p>
+                <img style="float:right;" class="img-responsive" hspace="20" src="img/calc.PNG" alt="" style="border:ridge 5px black;">
+                <p style="text-align:left;">
+                    I first had to think of something to set the time for counting.
+                     A clock frequency for the circuit would be a 555-timer set-up in astable mode. The resistors, 
+                     capacitor combo I used of 100Kohm, 10Kohm, and 10uF giving a clock frequency of about 6.5Hz. 
+                     Given by the equation from the datasheet (see pic). The clock would send a signal to a 74 
+                     series counter chip to continually add to the binary output of these 74xx counter chips. 
+                     I chose two of the 7493 counter chips to drive all eight LEDs. Divide by 16 counters were 
+                     the highest I had on hand although I am aware there are counter chips that give an 8-bit 
+                     output. It didn’t matter the counter chips are essentially an array of J-K flip flop memory 
+                     blocks. The output of one chip could easily be put to the input of the other to easily make
+                      an 8-bit counter from two 4-bit ones.<br>
+                </p>
+                <img style="float:left;" class="img-responsive" hspace="20" width=400 length=300 src="img/bread.jpg" alt="" style="border:ridge 5px black;">
+                <p style="text-align:left;">
+                        Once a schematic was drawn up, it came time to prototype. I started with a breadboard 
+                        prototype and it worked! Lovely and no real issues. Time to move on to the protoboard 
+                        prototype. The protoboard version would be the one on my desk since a full PCB seems 
+                        like a bit much for something so tiny and rather personal. The protoboard was put together 
+                        and now has a happy spot on my desk! This was plenty of fun and didn’t cost me a thing 
+                        since I was able to use parts just lying around. I had so much fun in fact that I got a 
+                        bit carried away and CADed a design for a printed circuit board of this circuit. I haven’t
+                        produced any boards yet but the Gerber files are ready so…maybe one day.
+                </p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+        <p>
+          <video muted autoplay loop class="img-responsive" src="img/loop.mp4" type="video/mp4" alt="" style="border:ridge 2px black;">
+          </video>
+        </p>
+        <p>Here's the loop of the new desk trinket. As you can see, counts up to 255 then resets to zero. Such fun!</p>
+        <p> Here's the Bill Of Materials for this project
+				  <table>
+  					<tr>
+    					<th>BOM Item #</th>
+    					<th>Item Name</th>
+    					<th>Quantity</th>
+    					<th>Price/Unit</th>
+    					<th>Total Cost</th>
+  					</tr>
+  					<tr>
+    					<td>1</td>
+    					<td>Protoboard</td>
+    					<td>1</td>
+    					<td>$1.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>2</td>
+    					<td>220&#8486; Resistor</td>
+    					<td>8</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>3</td>
+    					<td>8-Pin DIP Socket</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>4</td>
+    					<td>14-Pin DIP Socket</td>
+    					<td>2</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>6</td>
+    					<td>5MM LED</td>
+    					<td>8</td>
+    					<td>$0.25</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>7</td>
+    					<td>10kohm Resistor</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+            		</tr>
+            		<tr>
+    					<td>8</td>
+    					<td>100kohm Resistor</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+           			</tr>
+  					<tr>
+    					<td>9</td>
+    					<td>33&#181;F Capacitor</td>
+    					<td>1</td>
+    					<td>$0.35</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td>$6.25</td>
+  					</tr>
+				</table>
+				</p>
+				<p><bt>This article was last edited: <a href="#">November 2018</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

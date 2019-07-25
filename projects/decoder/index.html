@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>4:7 Decoder Design <br> (Seven-Segment Display Driver)</h2>
+				<hr>
+        <p style="text-align:left;">
+          The purpose of this project was to use the basics of digital logic design using 
+          combinational building blocks to make a seven-segment display driver or a 4:7 Decoder 
+          block. The 4:7 (7-Segment) Decoder/Driver is meant to be implemented on the Terasic 
+          DE-10 MAX FPGA (<a href="https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1021">https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1021</a>). 
+          The decoder has 4 inputs on each of the switches that correspond to a binary number. The 
+          binary number is represented in hexadecimal on the seven-segment display on the FPGA board. 
+          The seven segments require 7 outputs from the decoder in order to drive it. Seven-Segment 
+          drivers, of course, help control seven segment displays with a simplified input to get the 
+          segment to display a number or letter. Most all seven-segment displays that are used in consumer 
+          products will have a decoder/driver paired with them to lower the risk of glitches and malfunction 
+          (showing non-alphanumerical items on the display).
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/BlockDiagram.png" alt="" style="border:ridge 5px black;">
+        <p style="text-align:left;">
+          The block diagram consists of the 4:7 decoder between the binary switch inputs and the seven-segment output. 
+          The inputs were labeled as digital values each with a number the corresponds to the most and least significant 
+          bits; D3 is the most significant, D0 is the least significant. The outputs were labeled based on the pin of 
+          the seven-segment they were meant to attach to. For example the a output is meant to be connected to the 
+          seven-segments A pin (which is the top-most segment of the display). When the decoder is functioning, the 
+          schematic will be complied into a single part so it may be used in future projects. The schematic of a single 
+          segment's logic and the corresponding Karnaugh Maps are listed below.
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/k1.jpg" alt="" style="border:ridge 5px black;">
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/k2.jpg" alt="" style="border:ridge 5px black;">
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/k3.jpg" alt="" style="border:ridge 5px black;">
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/k4.jpg" alt="" style="border:ridge 5px black;">
+        <br><br>
+        <p style="text-align:left;">
+          Once all of the K-Maps were made, they were translated into the Block Diagram Editor in Quartus 
+          (program used to synthesize onto DE-10). The correct output was confirmed in ModelSim 10.5b then 
+          synthesized to the DE-10. Here's the full schematic, ModelSim, and Truth Table.
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/sch.JPG" alt="" style="border:ridge 5px black;">
+        <div class="spacer"></div>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/model.JPG" alt="" style="border:ridge 5px black;">
+        <div class="spacer"></div>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/truth.JPG" alt="" style="border:ridge 5px black;">
+        <p style="">
+          <br><br>
+          Here's the working implementation on the DE-10 board.
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/de10.jpg" alt="" style="border:ridge 5px black;">
+        <p style="text-align:left;">
+          <br><br>
+          Now after all of that effort of making K-Maps and afterwards troubleshooting them, 
+          here’s the SystemVerilog code for making a Seven-Segment Display Driver. This is one 
+          of many reasons why Hardware Description Languages like SystemVerilog and VHDL are used in industry…
+        </p>
+      </div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive.center" src="img/verilog.JPG" alt="decoder"></p>
+				</p>
+				<p><bt>This article was last edited: <a href="#">April 2019</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

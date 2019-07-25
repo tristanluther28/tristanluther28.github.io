@@ -135,6 +135,9 @@ a:after {
     padding: 0;
 }
 
+.spacer{
+    padding: 20px;
+}
 
 .navbar {
 	text-transform: uppercase;

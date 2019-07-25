@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>Digital Logic Gate Delays</h2>
+				<hr>
+        <p style="text-align:left;">
+          In digital logic, the poor timing of events can be the difference between a glitch and proper execution. 
+          The signals in the circuit must pass through the MOSFETs P and N regions of the logic gates to execute 
+          whatever it is your circuit is accomplishing. While in a copper wire, the speed of the electrons is about 
+          0.59c to 0.77c with c being the speed of light at c = 299,792,458 m/s. That’s between 176,877,550 and 
+          230,840,192 m/s or 395,663,810 and 516,374,803 mph. That’s really fast. So fast that it’s nearly impossible 
+          to visualize that speed. Here’s a neat map visualizer for how long it takes to get anywhere in the world 
+          <a href="https://academo.org/demos/speed-of-light-visualizer/">https://academo.org/demos/speed-of-light-visualizer/</a>
+          <br><br>
+          So, with each MOSFET that your signal passes through, there is a delay of that electric signal. No longer moving at the near 
+          speed of light velocities seen before. Each different type of logic gate has a different number of MOSFETs which leads to 
+          different delays in the signal. To the left is a table of the different delays involved with the various gates used in digital 
+          logic design. The table describes that signals are slowed on the picosecond magnitude, so it is small but not insignificant 
+          when taking about over half the speed of light velocities.
+          <br><br>
+          You’ll notice two columns with different times listed. Propagation Delay and Contamination Delay. These two times give the worst-case 
+          scenario time and the best-case scenario respectively.
+          <br><br>
+          If you are building a sequential circuit, where the timing of signals is essential, you must keep the worst-case times of your circuit in mind.
+          <br><br>
+          All this text about the delay caused by digital logic circuits is due to a neat project that was mentioned in the textbook of my 
+          ECE 271: Digital Logic Design textbook. The circuit depicted is called Ring Oscillator. It is a simple line of NOT gate in a 
+          loop. It is important that there is an odd number of NOT gates in the circuit so that the last NOT gate in the loop sends out 
+          the inverse of the original signal. When that signal loops back around to the input of the first NOT gate it will invert again 
+          once it passes through the last gate, returning to the original signal. The process loops and continues, switching between a 
+          logic 1 and a logic 0, making an oscillation. 
+          <br><br>
+          The equation for the frequency of a ring oscillator is described as f = 1/2&pi;*N*t<sub>d</sub> where N is the number of NOT gates 
+          (must be odd) and t<sub>d</sub> is the time delay of your circuit. 
+				</p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive.center" src="img/ring.png" alt="delay"></p>
+				</p>
+				<p><bt>This article was last edited: <a href="#">March 2019</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

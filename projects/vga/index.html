@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>VGA Driver Design</h2>
+				<hr>
+        <p style="text-align:left;">
+          The purpose of this project was to introduce setting up a driver for a VGA output in 640 x 480 resolution 
+          and to help further my knowledge of SystemVerilog. The hardware used in this project revolved around the 
+          Terasic DE-10 MAX FPGA (<a href="https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1021">https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1021</a>). 
+          When the SystemVerilog was synthesized a tested through ModelSim 10.5b the proper outputs were confirmed
+           and the SystemVerilog was synthesized onto the DE-10. The DE-10s built-in VGA output was used to send 
+           the correct signals to a VGA display driven monitor. The timing for the refresh rate of the display was 
+           set using the on-board 50MHz clock. The clock signal was slowed down to 25MHz to get the correct resolution, 
+           as recommended by the FPGA datasheet 
+           (Found here: <a href="https://www.intel.com/content/dam/altera-www/global/en_US/portal/dsn/42/doc-us-dsnbk-42-2912030810549-de10-lite-user-manual.pdf">https://www.intel.com/content/dam/altera-www/global/en_US/portal/dsn/42/doc-us-dsnbk-42-2912030810549-de10-lite-user-manual.pdf</a>). 
+           The SystemVerilog code that was written can be found on <a href="https://github.com/tristanluther28/VGAdriver">my GitHub</a>.
+        </p>
+        <img class="img-responsive" hspace="20" src="img/BlockDiagram.png" alt="" style="border:ridge 5px black;">
+        <p style="text-align:left;">
+          Here’s a block diagram of my design, made with the ECE272 Template.
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/rtlVga.JPG" alt="" style="border:ridge 5px black;">
+        <p style="text-align:left;">
+          Here’s the topmost RTL level of the VGA driver. This driver has external components that will be discussed.
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/after800.JPG" alt="" style="border:ridge 5px black;">
+        <p style="text-align:left;">
+          Here’s the ModelSim output that shows the vertical and horizontal syncs toggling at the correct clock pulses.
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/Blocks.jpg" alt="" style="border:ridge 5px black;">
+        <p style="text-align:left;">
+          Here’s the original output on the VGA screen before the external components were added.
+        </p>
+        <p style="text-align:left;">
+          The block diagram consists of the 50MHz clock, the T flip-flop shown is meant to slow down the clock to 25MHz 
+          (half its speed), but in implementation this was achieved using a counter block. The 50MHz signal is built into 
+          the FPGA board, the signal can be used to get our desired refresh rate of 60Hz when it is slowed down. The clock 
+          signal was divided by having it pass through a block of flip-flops. This chain of flip-flops is known as a counter. 
+          The clock only had to be passed through a single flip-flop to get the desired 25MHz, half the speed of the original 
+          clock. The 25MHz clock signal was then sent into the VGA block module. On the positive edge of every clock cycle the 
+          position of the scan for the screen was updated. The VGA block would have internal coordinates what simulated counting 
+          through a 800 x 525 grid, at specific moment in the clock cycle it would toggle different outputs to signify the HSync,
+           VSync, a blank spot on the visible screen, or the front and back porches for each directional synchronization. The 
+           colors were initially hard coded to toggle high when the VGA scan reached points in it process. However, this was 
+           later changed to have the colors read from a text file containing hexadecimal values, giving the colors varying 
+           intensity at individual points to show a full color image. I decide to make the image to be translated into hex was 
+           Poochie Dog because I thought it was funny. 
+        </p>
+        <img style="float:right;" class="img-responsive" hspace="20" src="img/rtlTop.JPG" alt="" style="border:ridge 5px black;">
+        <p style="text-align:left;">
+          Here’s the RTL Viewer diagram for the image translator and VGA driver.
+        </p>
+        <p style="text-align: left;">
+          There were some issues that I encountered when implementing this project. The major issue involved trying to understand 
+          H-Sync and V-Syncs relation to the clock. After several seemingly successful ModelSim trials, I could not get the monitor 
+          to display. The error 'Signal Not Recognized' appeared on the monitor I was testing with, which lead me to believe that 
+          the clock speed was incorrect. After inspection of the datasheet, I noted that the correct clock speed was 25MHz and 
+          adjusted my signal accordingly. After that fix the implementation displayed on the screen.
+        </p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive" src="img/poochie.jpg" alt="poochie"></p>
+				</p>
+				<p><bt>This article was last edited: <a href="#">May 2019</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

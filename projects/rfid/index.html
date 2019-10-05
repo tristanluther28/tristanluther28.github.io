@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>RFID SCANNER KEYBOARD</h2>
+				<hr>
+				<p style="text-align:left;">This project was made at the request of the Oregon State University Robotics Club. 
+					The club needed more RFID scanners in order to register new members into the club using their Oregon State 
+					Identification Cards. The club formerly had multiple scanners to register incoming members but many of them 
+					had been salvaged by other members of the robotics club due to the valuable microcontroller used inside the 
+					scanner (<a href="https://www.pjrc.com/store/teensy32.html">Teensy 3.2 with 32-bit ARM processor</a>). The requirements 
+					for this project were that their needed to be seven new RFID scanners, the needed to accept a new RFID protocol 
+					(Wiegand 35-bit) being used in the cards held by incoming freshmen as well as accept the old protocol (Minifare 34-bit) 
+					and they needed to be completed by October of that year; before the robotics club kick-off event. 
+				</p>
+				<p style="text-align: left;">First, I began by studying the last remaining RFID scanner that was built to completeness. I figured 
+					the pinout for reading the serial data from the RFID reader to the microcontroller. The data was read into the declared data 
+					and clock pins on the Teensy (Pin2 and 3 respectively). The data and clock pins on the RFID Reader were the green wire 
+					(Data Line) and white wire (Clock) I got a test version of the reader set-up on a breadboard with a recovered RFID scanner 
+					and a new Teensy3.2.
+				</p>
+				<p style="text-align: left;">Work on the firmware update started by looking at the C library that was being used for the previous scanner. 
+					The after reading documentation on the differences between the Minifare and Wiegand protocols it was found that the reader being used 
+					(HID-6005BGB00) could accommodate both. However, the 35th bit would need to be compensated for in the C library so that it was not read 
+					as interfering noise. If interfering noise was detected, then the library would nullify the entire reading action on the Teensy 3.2. The 
+					changes were made to the code to and the implementation worked! The code is available on <a href="https://github.com/OSURoboticsClub/security_systems/tree/master/Orange_Card_Wiegand_Library">Github</a>.
+					<p><img class="img-responsive" src="img/code.JPG" alt=""></p>
+				</p>
+				<p style="text-align: left">Next came the Solidworks for the reader case. It was modeled closely to the original by I decided to make holes 
+					for heat set inserts and make the reader significantly shorter to save PLA when 3D printing. You can download the solidworks 
+					and .stl file here: <br><a href="assets/rfidKeyboardTop.STL" download>rfidKeyboardTop.stl</a><br><a href="assets/rfidKeyboardTop.SLDPRT" download>rfidKeyboardTop.SLDPRT</a><br>
+					 <a href="assets/rfidKeyboardBottom.STL" download>rfidKeyboardBottom.stl</a><br><a href="assets/rfidKeyboardBottom.SLDPRT" download>rfidKeyboardBottom.SLDPRT</a>
+				</p>
+				<p style="text-align: left;">Everything was printed, wired up, and put together. The reader essentially functions as a keyboard so it can 
+					be plugged into any USB port and work as an external device for text input.
+				</p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive" src="img/scanners.jpg" alt=""></p>
+				<p> Here's the Bill Of Materials for this project
+				  <table>
+  					<tr>
+    					<th>BOM Item #</th>
+    					<th>Item Name</th>
+    					<th>Quantity</th>
+    					<th>Price/Unit</th>
+    					<th>Total Cost</th>
+  					</tr>
+  					<tr>
+    					<td>1</td>
+    					<td>Heat Shrink 1/16” (~1ft.)</td>
+    					<td>1</td>
+    					<td>$0.15</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>2</td>
+    					<td>Teensy 3.2</td>
+    					<td>1</td>
+    					<td>$19.80</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>3</td>
+    					<td>#4-40 Heat Set</td>
+    					<td>4</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>4</td>
+    					<td>#4-40 Machine Screw 1-1/4"</td>
+    					<td>4</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>5</td>
+    					<td>7/64" Machine Screws 1/2"</td>
+    					<td>2</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>6</td>
+    					<td>30AWG Wire (~1ft)</td>
+    					<td>1</td>
+    					<td>$0.20</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>7</td>
+    					<td>40ct. Male Header Pins</td>
+    					<td>1</td>
+    					<td>$0.75</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>8</td>
+    					<td>4-pin Connector</td>
+    					<td>1</td>
+    					<td>$0.15</td>
+    					<td> </td>
+					</tr>
+					<tr>
+    					<td>9</td>
+    					<td>HID-6005BGB00 Scanner</td>
+    					<td>1</td>
+    					<td>$80.60</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td>$102.15</td>
+  					</tr>
+				</table>
+				</p>
+				<p><bt>This article was last edited: <a href="#">October 2019</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

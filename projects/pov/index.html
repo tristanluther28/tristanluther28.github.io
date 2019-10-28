@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>PERSISTANCE OF VISION WAND</h2>
+				<hr>
+				<p style="text-align:left;">
+					This project was made for ECE 341: Junior Design for Accelerated Project 1 at Oregon State University. 
+					It was completed in a group of three with Graham Mueller, Nicholas Lin, and myself. Each team member 
+					focused on a particular aspect of the project. The team member responsibilities went as follows: Graham 
+					Muller worked on component selection, case design and final assembly. Nicholas Lin worked on initial 
+					hardware planning, maintaining project archives, and the final video editing. I worked on writing the code 
+					and built the first prototype.<p><img class="img-responsive" src="img/sch.JPG" alt=""></p>
+				</p>
+				<p style="text-align: left;">
+					The case layout required an internal battery, the microcontroller, the LED strip with current limiting resistors, 
+					accelerometer sensor and a power switch. These all had to be wired together which necessitated extra room in 
+					the vertical axis. Each component had a small amount of buffer room added to it to deal with the imprecise 
+					3D printing and possible component reselection as the project matures. The LED segment required offset precision 
+					as it had to be placed over a predetermined cutoff while also attaching to the arduino.
+					The 3D files are available on <a href="https://www.thingiverse.com/thing:3938061">Thingiverse</a>. 
+					<p><img class="img-responsive" src="img/case.jpg" alt=""></p>
+				</p>
+				<p style="text-align: left;">
+					Moving onto the code for the program, we'll start from the beginning and move through the important functions. 
+					You can get a good look at the full code on <a href="https://github.com/tristanluther28/pov_wand">Github</a>. 
+					First we have the global variables and library used in the program. The variables are split between the variables 
+					for the accelerometer calculation, variables for setting the output LEDs, the text output that will be read by 
+					the program and translated into flashes, and finally variables used for setting variable delay.
+				</p>
+				<p style="text-align: left;">
+					The direction is determined by reading X and Y data from the accelerometer and comparing those values to the values 
+					that were read on the previous loop. If the change in acceleration magnitude was great enough then we have detected 
+					that we’re moving. After that, using values from initial testing with the accelerometer. We determine if we are moving 
+					from left to right or moving right to left.
+				</p>
+				<p style="text-align: left;">
+					The translation of the character to an LED output begins with determining the character that needs to be sent to output. 
+					This was accomplished with an if else block in the displayLetter function. The if else block continues down to all of the 
+					possible letters that could be set.<br>
+					Once the letter is determined the program then loops though the hex file that contains the character to 10 LED translation. 
+					The program loops column by column of the letter so that it blurs together into the letter that is meant to be displayed. 
+					The letter columns will be read in reverse if the direction is determined to be different. 
+					<p><img class="img-responsive" src="img/pov_diagram.png" alt=""></p>
+				</p>
+				<p style="text-align: left;">
+					The case, code, and components all came together (with some excellent wire management from Graham). The case was fastened 
+					with M3 1-1/4" machine screws on the corners and the software was uploaded to the arduino. Testing displayed that the words 
+					were readable! However, if the word is longer than seven letters, you're gonna need really long arms to get it all to display.
+					<p><img class="img-responsive" src="img/open.jpg" alt=""></p>
+				</p>
+				<p style="text-align: left;">
+					Here's the final result below. The shape of the wand, is less of a wand, and more of a box that you wave back and fourth. It still
+					 works and the group was really pleased with the output. Thanks for reading!
+				</p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive" src="img/together.jpg" alt=""></p>
+				<p> Here's the Bill Of Materials for this project
+				  <table>
+  					<tr>
+    					<th>BOM Item #</th>
+    					<th>Item Name</th>
+    					<th>Quantity</th>
+    					<th>Price/Unit</th>
+    					<th>Total Cost</th>
+  					</tr>
+  					<tr>
+    					<td>1</td>
+    					<td>Tapered Heat-Set Inserts for Plastic</td>
+    					<td>4</td>
+    					<td>$0.54</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>2</td>
+    					<td>M2 Fasteners - 5mm</td>
+    					<td>3</td>
+    					<td>$0.01</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>3</td>
+    					<td>M3 Fastener - 27mm</td>
+    					<td>4</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>4</td>
+    					<td>9V Battery</td>
+    					<td>1</td>
+    					<td>$2.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>5</td>
+    					<td>Arduino Uno R3</td>
+    					<td>1</td>
+    					<td>$10.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>6</td>
+    					<td>Toggle SPDT Switch 5A 120V</td>
+    					<td>1</td>
+    					<td>$3.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>7</td>
+    					<td>ADXL335 Accelerometer</td>
+    					<td>1</td>
+    					<td>$7.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>8</td>
+    					<td>1mm x 5mm LEDs</td>
+    					<td>7</td>
+    					<td>$0.35</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td>$27.34</td>
+  					</tr>
+				</table>
+				</p>
+				<p><bt>This article was last edited: <a href="#">October 2019</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.thingiverse.com/tristanluther28/designs">Thingiverse</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

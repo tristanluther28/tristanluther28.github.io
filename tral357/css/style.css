@@ -9,6 +9,17 @@ h1,h2,h3,h4,h5,h6{
 
 p{
     font-family: 'EB Garamond', serif;
+    font-size: 18px;
+}
+
+li{
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+}
+
+b{
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
 }
 
 .navbar-inverse{
@@ -20,4 +31,27 @@ p{
 
 #footer{
     background: #222;
+}
+
+.white{
+    color: antiquewhite;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:600px;
+    width:600px;
+}
+
+.gmap_canvas{
+    overflow:hidden;
+    background:none!important;
+    height:500px;
+    width:600px;
 }

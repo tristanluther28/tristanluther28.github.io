@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>AUDIO VISUALIZER</h2>
+				<hr>
+                <p style="text-align:left;">
+                    This project was made for ECE 341: Junior Design for Accelerated Project 2 at Oregon State University. 
+					It was completed in a group of three with Brandon Rawson, Ichen Lee, and myself. Each team member 
+					focused on a particular aspect of the project. The team member responsibilities went as follows: Graham 
+					Muller worked on component selection, case design and final assembly. Nicholas Lin worked on initial 
+					hardware planning, maintaining project archives, and the final video editing. I worked on writing the code 
+					and built the first prototype. 
+                </p>
+                <img style="float:right;" class="img-responsive" hspace="20" width=400 length=300 src="img/proto.jpg" alt="" style="border:ridge 5px black;">
+                <p style="text-align: left;">
+                    The case layout required two 3.5mm audio jacks (one in one out), the microcontroller with hole to access the usb for power, 
+                    the LED matrix with current limiting resistors, an electret microphone with band-pass filter, and a switch. These all had to be wired together 
+                    which necessitated extra room in the enclosure. Each component had a small amount of buffer room added to it to deal with the imprecise 
+					3D printing and possible component reselection as the project matures. The LED matrix required to be friction fit into the enclosure.
+					The 3D files are available on <a href="https://www.thingiverse.com/thing:3977666">Thingiverse</a>. 
+                </p>
+                <img style="float:left;" class="img-responsive" hspace="20" width=400 length=300 src="img/protoCase.jpg" alt="" style="border:ridge 5px black;">
+                <p style="text-align:left;">
+                    Moving onto the code for the program, we'll start from the beginning and move through the important functions. 
+					You can get a good look at the full code on <a href="https://github.com/tristanluther28/audio_visualizer-v1">Github</a>. 
+                    First we have the global variables and library used in the program. The arduinoFFT library was used due to its simplicity. However
+                    there are much faster/better libraries available such as fix_fft and avr-fft. The set-up for the transform was created and the input 
+                    analog signal pin was set. A sampling frequency of 100Hz was chosen so as to not overload the ATmega168's ADC.  
+                </p>
+                <img style="float:right;" class="img-responsive" width=300 length=300 hspace="10"  src="img/together.JPG" alt="" style="border:ridge 5px black;">
+                <p style="text-align: left;">
+                    The audio was sampled 64 times in a given sampling period so that the arduinoFFT library could return results quickly. 
+                    This could be improved upon with if the LED matrix was not relying on multiplexing to display the output. The 64 samples that 
+                    have been converted to the frequency domain by the FFT are then averaged out to eight different values so that the 8x8 LED matrix
+                    can display each of the frequency amplitudes. For a more in-depth discussion on everyone's contribution watch out project presentation
+                    video below!  
+                </p>
+                <iframe width="900" height="506" src="https://www.youtube.com/embed/ORdKnB4_Op8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p style="text-align: left;">
+                    The schematic for this project and enclosure stl files are available below along with the bill of materials for everything inside. Thank you for reading!
+                    <br><br>
+                    <a href="img/AP2-v3.pdf" download>Schematic Download</a><br>
+                    <a href="https://www.thingiverse.com/thing:3977666">Enclosure Download (on Thingiverse)</a>
+                </p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><iframe width="900" height="506" src="https://www.youtube.com/embed/QxN1NKkr0Yk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+				<p> Here's the Bill Of Materials for this project
+				  <table>
+  					<tr>
+    					<th>BOM Item #</th>
+    					<th>Item Name</th>
+    					<th>Quantity</th>
+    					<th>Price/Unit</th>
+    					<th>Total Cost</th>
+  					</tr>
+  					<tr>
+    					<td>1</td>
+    					<td>Arduino Nano (ATmega168)</td>
+    					<td>1</td>
+    					<td>$4.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>2</td>
+    					<td>8x8 LED Matrix</td>
+    					<td>1</td>
+    					<td>$2.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>3</td>
+    					<td>3.5mm Audio Jacks</td>
+    					<td>2</td>
+    					<td>$1.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>4</td>
+    					<td>Electret Microphone</td>
+    					<td>2</td>
+    					<td>$3.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>5</td>
+    					<td>200&#8486; Resistor</td>
+    					<td>8</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>6</td>
+    					<td>2.2k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>7</td>
+    					<td>40ct. Male Header Pins</td>
+    					<td>1</td>
+    					<td>$1.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>8</td>
+    					<td>100k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.05</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>9</td>
+    					<td>0.1&#181;F Capacitor</td>
+    					<td>1</td>
+    					<td>$0.35</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>10</td>
+    					<td>10nF Capacitor</td>
+    					<td>2</td>
+    					<td>$0.35</td>
+    					<td> </td>
+                    </tr>       
+  					<tr>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td>$12.05</td>
+  					</tr>
+				</table>
+				</p>
+				<p><bt>This article was last edited: <a href="#">December 2019</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.thingiverse.com/tristanluther28/designs">Thingiverse</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

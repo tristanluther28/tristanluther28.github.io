@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>JUNIOR DESIGN POWER SUPPLY</h2>
+				<hr>
+                <p style="text-align:left;">
+                    This project came from an assignment for ECE 341: Junior Design at Oregon State University. 
+                    The project included assembling a SMD power supply with parts in the size range of 0603. 
+                    Students were given the option of going into the electrical lab office hours to be given 
+                    solder paste and have the Teaching Assistant (TA) cook the boards in the reflow oven. While 
+                    that would have been fine, I’ve been though that process. I wanted to try something a bit 
+                    trickier, so I used the reflow station that I keep on my desk and got to work with some 
+                    standard 0.4mm tin-lead solder (63/37, always 63/37). Reflowing wasn’t too difficult after 
+                    the first few components. The solder sticks so well to the parts once it gets up to temp. 
+                    The only difficulty that arose was I had put the aluminum drum capacitor (one of those 
+                    Panasonic package type) on the board too early. Causing it to get multiple waves of heat 
+                    and causing the capacitor to eventually burst and go flying! Hit me square in the temple. 
+                    Would recommend putting that piece on later in the process. 
+                </p>
+                <img style="float:right;" class="img-responsive" hspace="20" width=400 length=300 src="img/testing.jpg" alt="" style="border:ridge 5px black;">
+                <p style="text-align: left;">
+                    Once the SMD part of the board was assembled using the enclosed parts I finished the rest of 
+                    with a just a soldering iron. This included the larger components like the DC Barrel Jack 
+                    connector and the header pins. With the whole board done it was time for testing the two 
+                    types of power supplies on the boards. There is a 5V switch-mode power supply that uses the 
+                    Texas Instruments TPS54232 and a 3.3V linear power supply that uses a generic LD1117533TR. 
+                    Measurements were taken on efficiency and voltage ripple.
+                </p>
+                <img style="float:left;" class="img-responsive" hspace="20" width=400 length=300 src="img/setup.jpg" alt="" style="border:ridge 5px black;">
+                <h3 style="text-align: left;">Efficiency Measurements</h3>
+                <p style="text-align:left;">
+                    The Switching 5V Supply has much greater efficiency than the Linear 3.3V supply. For nominal 
+                    currents the 5V supply had near perfect (>90%) efficiency, but the switching supply dropped 
+                    off in efficiency as the change in voltage (between input supply and regulated supply) became 
+                    greater. A Linear supply makes sense when power efficiency is not of great concern for your
+                     circuit (e.g. avionics systems that have electricity generated from the propellers of the 
+                     aircraft). A 5V switching power supply would be a better option for a system that needs 
+                     regulator efficiency (See supporting data below).
+                </p>
+                <img style="float:right;" class="img-responsive" width=300 length=300 hspace="10"  src="img/supplyEfficiency.JPG" alt="" style="border:ridge 5px black;">
+                <h3 style="text-align: left;">Voltage Ripple Measurements</h3>
+                <p style="text-align: left;">
+                    For the 3.3V supply there was very little voltage ripple, regardless of the input voltage. 
+                    The 5V supply has large relative voltage ripple compared to the linear supply. As the input 
+                    voltage increased for the 5V supply the voltage ripple increased as well (See supporting data below). 
+                </p>
+                <img style="float:left;" class="img-responsive" hspace="10"  src="img/rip.JPG" alt="" style="border:ridge 5px black;">
+                <p style="text-align: left;">
+                    The schematic for this board is available below along with the bill of materials for everything on the board. Thank you for reading!
+                    <br><br>
+                    <a href="img/schem.pdf" download>Schematic Download</a>
+                </p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive" src="img/board.jpg" alt=""></p>
+				<p> Here's the Bill Of Materials for this project
+				  <table>
+  					<tr>
+    					<th>BOM Item #</th>
+    					<th>Item Name</th>
+    					<th>Quantity</th>
+    					<th>Price/Unit</th>
+    					<th>Total Cost</th>
+  					</tr>
+  					<tr>
+    					<td>1</td>
+    					<td>PCB Manufacturing</td>
+    					<td>1</td>
+    					<td>$10.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>2</td>
+    					<td>4.9mmx4.9mm 3.3&#181;H Inductor</td>
+    					<td>1</td>
+    					<td>$0.05</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>3</td>
+    					<td>3.5MM DC Barrel Connector</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>4</td>
+    					<td>B220 Schottky Diode</td>
+    					<td>2</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>5</td>
+    					<td>1N5819 SOD-12</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>6</td>
+    					<td>0603 LED</td>
+    					<td>2</td>
+    					<td>$0.75</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>7</td>
+    					<td>40ct. Male Header Pins</td>
+    					<td>1</td>
+    					<td>$1.00</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>8</td>
+    					<td>0.015&#181;F 0603 Capacitor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>9</td>
+    					<td>0.1&#181;F 0603 Capacitor</td>
+    					<td>2</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>10</td>
+    					<td>10&#181;F 0603 Capacitor</td>
+    					<td>2</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>11</td>
+    					<td>10&#181;F Panasonic D 4.0mm Capacitor</td>
+    					<td>1</td>
+    					<td>$0.40</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>12</td>
+    					<td>47pF 0603 Capacitor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>13</td>
+    					<td>680pF 0603 Capacitor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr> 
+                    <tr>
+    					<td>14</td>
+    					<td>0.01&#8486; Resistor</td>
+    					<td>2</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr> 
+                    <tr>
+    					<td>15</td>
+    					<td>0.05&#8486; Resistor</td>
+    					<td>2</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>16</td>
+    					<td>1.37k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr> 
+                    <tr>
+    					<td>17</td>
+    					<td>1.87k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>17</td>
+    					<td>10k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr> 
+                    <tr>
+    					<td>18</td>
+    					<td>150k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>19</td>
+    					<td>17.4k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr> 
+                    <tr>
+    					<td>20</td>
+    					<td>48.7k&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>21</td>
+    					<td>560&#8486; Resistor</td>
+    					<td>1</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>22</td>
+    					<td>SPDT Switch</td>
+    					<td>1</td>
+    					<td>$1.00</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>23</td>
+    					<td>LD1117S33TR</td>
+    					<td>1</td>
+    					<td>$0.50</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>24</td>
+    					<td>TPS54232</td>
+    					<td>1</td>
+    					<td>$1.50</td>
+    					<td> </td>
+  					</tr>                     
+  					<tr>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td>$17.13</td>
+  					</tr>
+				</table>
+				</p>
+				<p><bt>This article was last edited: <a href="#">October 2019</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.thingiverse.com/tristanluther28/designs">Thingiverse</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

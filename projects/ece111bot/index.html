@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>MOTOR CONTROLLER 7 BOARD</h2>
+				<hr>
+                <p style="text-align:left;">
+                    This was a project assigned to me during my Tekbots Internship during the Summer of 2019. 
+                    The objective was to update the Tekbots motor controller board version 6 to accept the cheaper 
+                    and readily available Arduino Nano Clones. The motor controller board is meant to build a 
+                    demonstration robot that could serve as an example to the incoming freshmen that were going 
+                    to be taking the revamped version of ECE111. Their objective was to build a simple bump bot 
+                    that could be controlled by a user and get around obstacles by running into them. Here’s a 
+                    picture of one of the blank boards (Image below).
+                    <img style="float:right;" class="img-responsive" width=400 length=300 hspace="20" src="img/empty.jpg" alt="" style="border:ridge 5px black;">  
+                </p>
+                <p style="text-align: left;">
+                    Having a version of the motor controller board that operates off the Arduino Nano would make 
+                    for a very assessable design for freshmen who may not have much exposure to embedded programming. 
+                    This design was made for education purposes. Here’s the populated board sitting on my bump bot (Image below).
+                </p>
+                <p style="text-align: left;">
+                    The older motor controller version 6 is meant to accept a Teensy 2.0 development board. A very 
+                    good dev board that comes at too high of a price given the way it was used by freshmen coursework.
+                </p>
+                <p style="text-align: left;">
+                    The motor controller aspect of the board functions like an Arduino Shield where there are I/O pins 
+                    in the Arduino that are directly routed to pinouts on the board peripherals. These peripherals 
+                    were the LM293DNE motor controller and the HC-05 Bluetooth module. 
+                    <img style="float:left;" class="img-responsive" width=400 length=300 hspace="20" src="img/pop.jpg" alt="" style="border:ridge 5px black;"> 
+                </p>
+                <p style="text-align: left;">
+                    The LM293DNE was routed to D5 (PD5) and D6 (PD6) for the controllers 1,2 EN and 3,4 EN respectively. 
+                    The motor direction inputs were left to header pinout to keep potential designs flexible. There are 
+                    also two bidirectional LEDs on the motor output channels to indicate the direction of the motor. 
+                    Typically, green is for forwards and orange is for backwards, but the motor can be attached to the 
+                    channel with the opposite polarity and those colors would be reversed (This will not affect their 
+                    function). 
+                </p>
+                <p style="text-align: left;">
+                    The HC-05 Bluetooth module was routed to D0 (PD0) and D1 (PD1) for the modules RX and TX respectively. 
+                    This allows the Bluetooth transceiver to receive anything from the Arduino Nano over the UART pins so 
+                    it can then be transmitted out though the Bluetooth protocol. The default settings of the HC-05 includes 
+                    9600 baud rate, 8 data bits, 1 stop bits and no parity bits. I changed the ATmega168P code to match the 
+                    defaults for simplicity. Here’s a video of the bot in action!
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cfJ2vWTiSm4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p style="text-align: left;">
+                    Here’s a <a href="https://github.com/tristanluther28/embedded_bump_bot">GitHub link</a> to the basic Bump-Bot Behavior with basic Bluetooth control available, written in 
+                    embedded C to prevent any freshmen kitty coders from using this for their project. 
+                </p>
+                <p style="text-align: left;">
+                    Here’s the <a href="https://www.thingiverse.com/thing:4236664">Thingiverse link</a> to the bot base that I designed for housing the updated motor controller board, 
+                    breadboard for prototyping, and motor chassis (very simple only two posts). All of the parts are meant to 
+                    be cut from 3mm acrylic using the DXF (Drawing eXchange Format) files. However, the any vector image version 
+                    of the Solidworks files will work.
+                </p>
+                <p style="text-align: left;">
+                    
+                </p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive" src="img/full.jpg" alt=""></p>
+				<p> Here’s the Bill of Materials for the motor controller board. This BOM uses the prices that Tekbots pays and the BOM below that is for the bump bot with the motor controller as if it were paid for by a student.  
+				  <table>
+  					<tr>
+    					<th>BOM Item #</th>
+    					<th>Item Name</th>
+    					<th>Quantity</th>
+    					<th>Price/Unit</th>
+    					<th>Total Cost</th>
+  					</tr>
+  					<tr>
+    					<td>1</td>
+    					<td>PCB Manufacturing</td>
+    					<td>1</td>
+    					<td>$2.35</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>2</td>
+    					<td>33uF Ceramic Capacitor</td>
+    					<td>2</td>
+    					<td>$0.20</td>
+    					<td> </td>
+  					</tr>
+  					<tr>
+    					<td>3</td>
+    					<td>1x12 0.1" Female Header</td>
+    					<td>2</td>
+    					<td>$0.49</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>4</td>
+    					<td>1x2 0.1" Female Header</td>
+    					<td>2</td>
+    					<td>$0.18</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>5</td>
+    					<td>1x34 0.1" Male Header</td>
+    					<td>3</td>
+    					<td>$0.4</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>6</td>
+    					<td>1x4 0.1" Female Header</td>
+    					<td>1</td>
+    					<td>$0.27</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>7</td>
+    					<td>1x5 0.1" Female Header</td>
+    					<td>1</td>
+    					<td>$0.37</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>8</td>
+    					<td>1x6 0.1" Female Header</td>
+    					<td>1</td>
+    					<td>$0.3</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>9</td>
+    					<td>IC DIP Socket 16 Pin</td>
+    					<td>1</td>
+    					<td>$0.12</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>10</td>
+    					<td>#4 Screw 3/16" OD Nylon Spacer</td>
+    					<td>4</td>
+    					<td>$0.08</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>11</td>
+    					<td>4-40 Nut</td>
+    					<td>4</td>
+    					<td>$0.01</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>12</td>
+    					<td>4-40 Pan Head 5/8" Machine Screw</td>
+    					<td>4</td>
+    					<td>$0.03</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>13</td>
+    					<td>3mm Bidirectional LED</td>
+    					<td>2</td>
+    					<td>$0.27</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>14</td>
+    					<td>HLMP-1700 Red LED</td>
+    					<td>1</td>
+    					<td>$0.11</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>15</td>
+    					<td>LP2950 5V 100mA Regulator</td>
+    					<td>1</td>
+    					<td>$0.31</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>16</td>
+    					<td>L293DNE</td>
+    					<td>1</td>
+    					<td>$2.71</td>
+    					<td> </td>
+                    </tr>
+                    <tr>
+    					<td>17</td>
+    					<td>1k Ohm Resistor</td>
+    					<td>3</td>
+    					<td>$0.02</td>
+    					<td> </td>
+                    </tr>
+  					<tr>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td></td>
+    					<td>$10.56</td>
+  					</tr>
+				</table>
+                </p>
+                <p> Here’s the Bill of Materials for the bump bot with the motor controller with the prices that students pay to Tekbots.  
+                    <table>
+                        <tr>
+                          <th>BOM Item #</th>
+                          <th>Item Name</th>
+                          <th>Quantity</th>
+                          <th>Price/Unit</th>
+                          <th>Total Cost</th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Tekbots mtr_ctlr.7 Kit</td>
+                          <td>1</td>
+                          <td>$15.00</td>
+                          <td> </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>270 Contact Breadboard</td>
+                          <td>1</td>
+                          <td>$3.00</td>
+                          <td> </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>GM-3 6V Motors</td>
+                          <td>2</td>
+                          <td>$2.00</td>
+                          <td> </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>4-40 Machine Screws, 1-1/4"</td>
+                            <td>4</td>
+                            <td>$0.12</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>4-40 Nuts</td>
+                            <td>4</td>
+                            <td>$0.12</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Gearbox Wheels</td>
+                            <td>2</td>
+                            <td>$0.50</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>ATmega168P Arduino Nano</td>
+                            <td>1</td>
+                            <td>$6.00</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>HC-05 Bluetooth Module</td>
+                            <td>1</td>
+                            <td>$6.00</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Tekbots sense.1 Kit</td>
+                            <td>1</td>
+                            <td>$5.00</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>4x AA Battery Case</td>
+                            <td>1</td>
+                            <td>$0.50</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>AA Batteries</td>
+                            <td>4</td>
+                            <td>$1.20</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>4-40 Coupler Nut 1"</td>
+                            <td>4</td>
+                            <td>$0.12</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Swivel Wheel</td>
+                            <td>1</td>
+                            <td>$0.50</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>3mm Acrylic Sheet</td>
+                            <td>1</td>
+                            <td>$1.00</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>$48.24</td>
+                        </tr>
+                  </table>
+                  </p>
+				<p><bt>This article was last edited: <a href="#">March 2020</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.thingiverse.com/tristanluther28/designs">Thingiverse</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>DON: THE ANIMATRONIC BEAVER</h2>
+				<hr>
+                <p style="text-align: left;">
+                    This project was completed sometime ago as an introductory project for my internship at Tekbots during the Summer of 2019. The project was set-up to see how all the interns work together and what each of our specialties 
+                    were. I worked with Matthew Sessions and Nicholas Johansen to finish making Don: The Animatronic Beaver! A long standing Tekbots project that we were tasked to upgrade.
+                    <img style="float:right;" class="img-responsive" width=400 length=300 hspace="20" src="img/don.png" alt="" style="border:ridge 5px black;">
+                </p>
+                <p style="text-align: left;">
+                    Don is simply a stuffed beaver that was acquired on-campus at the Oregon State University Beaver Store that was gutted and given a 3D printed skeleton fixed unto a small table. 
+                    The internals of Don were servos controlling the up/down left/right of the head, arms, and left/right of the torso.
+                </p>
+                <p style="text-align: left;">
+                    By getting onto a <a href="http://web.engr.oregonstate.edu/~luthert/tekbots/index.php">website we made</a>, you can control Don the Beaver! You can move his head, shoulders and elbows to make him do various poses. He even
+                     knows how to clap and dance a little bit.
+                </p>
+                <p style="text-align: left;">
+                    Don works by having an ESP8266 acts as a client to the ENGR server. The client reads a JSON file on the server through a GET request and moves the servos on 
+                    Don according to the JSON file. 
+                </p>
+                <p style="text-align: left;">
+                    You can alter the JSON file that is read by the client though the webpage. By moving the sliders and clicking the buttons you are sending POST requests to the 
+                    server to edit the JSON file.
+                </p>
+                <p style="text-align: left;">
+                    Here’s the <a href="http://web.engr.oregonstate.edu/~luthert/tekbots/index.php">server page to control Don</a>. 
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/MbJ5yeLC5iE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p style="text-align: left;">
+                    Here’s the <a href="https://github.com/sessionm21/tekbots-arduino-animatronic">GitHub link</a> to the project repository. 
+                </p>
+                <p style="text-align: left;">
+                  Here’s the <a href="https://eecs.oregonstate.edu/project-showcase/projects/?id=fTPgT1T6zqnhvNKt">OSU Project Showcase</a> feature on this project. 
+                </p>
+			</div>
+        </div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive" src="img/isoBrdfull.jpeg" alt=""></p>
+                <p> Here’s the Bill of Materials for Don: The Animatronic Beaver.
+                  <table>
+                    <thead><tr><th title="Field #1">BOM Item #</th>
+                    <th title="Field #2">Item Name</th>
+                    <th title="Field #3">Quantity</th>
+                    <th title="Field #4">Price/Unit</th>
+                    <th>Total Cost</th>
+                    </tr></thead>
+                    <tbody><tr>
+                    <td>1</td>
+                    <td>Wemos D1 Mini</td>
+                    <td>1</td>
+                    <td>$5.00</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>FP-S148 Servo</td>
+                    <td>5</td>
+                    <td>$2.00</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>3</td>
+                    <td>Small Servo</td>
+                    <td>2</td>
+                    <td>$1.00</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>4</td>
+                    <td>PCA9685 I2C Servo Driver</td>
+                    <td>1</td>
+                    <td>$14.95</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>5</td>
+                    <td>Beaver Stuffed Animal</td>
+                    <td>1</td>
+                    <td>$9.50</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>6</td>
+                    <td>3D Printed Skeleton</td>
+                    <td>1</td>
+                    <td>$1.00 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> </td>
+                    <td>$42.45</td>
+                    </tr>
+                    </tbody></table>
+                  </p>
+				<p><bt>This article was last edited: <a href="#">March 2020</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.thingiverse.com/tristanluther28/designs">Thingiverse</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>

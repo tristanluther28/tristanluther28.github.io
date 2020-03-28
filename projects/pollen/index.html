@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/img/redRose.ico">
+
+    <title>Tristan's Workshop </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/js/hover.zoom.js"></script>
+    <script src="../../assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><h5>TRISTAN LUTHER</h5></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../index.html">Projects</a></li>
+            <li><a href="../../assets/pdf/LutherResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../../about/index.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-8 col-lg-offset-2 centered">
+				<h2>MAX 10 POLLEN BOARD</h2>
+				<hr>
+                <p style="text-align:left;">
+                  This project was my Junior Design group’s final project for ECE 342: Junior Design II at Oregon State University. 
+                  The Max 10 Pollen Board is a FPGA development board designed for digital signal processing that was initially 
+                  intended to contribute to the Music Box project that my Junior Design group was assigned. 
+                  <img style="float:right;" class="img-responsive" width=400 length=300 hspace="20" src="img/blank.jpg" alt="" style="border:ridge 5px black;">  
+                </p>
+                <p style="text-align: left;">
+                  My responsibility for the Music Box project was to make the main PCB that would operate as the central processor. 
+                  Our group elected to center the project around an FPGA. This component was selected for the value as an educational 
+                  exercise in working with a potentially very power component. FPGAs are becoming increasingly popular in the hobbyist 
+                  and professional community as a way for simulating computer architectures, creating fast parallel task performance 
+                  and allowing hardware to be adapted once at the customer. Our group saw that value of this component and acknowledged 
+                  that we had gaps in our knowledge about their operation and wished to know more. In retrospect, this project would 
+                  have been much more successful in the task of creating of a Music Box if we had centered the design around a 
+                  microcontroller that had a familiar architecture (AVR comes to mind). However, that’s not what being a student 
+                  is about and that’s not what innovation is about.
+                </p>
+                <p style="text-align: left;">
+                  I have learned so much more about PCB design from doing the research for this project. The primary challenge was 
+                  centered around the Altera MAX 10 FPGA that was selected as the central processor due to a donation from Intel to 
+                  Oregon State University. The package type of the FPGA was a FBGA-484 package. A 484-Ball Grid Array that had a Ball
+                   Pitch of 39.37mils (One thousandths of and inch) which left enough room to fit a via that could be no larger than 
+                   10mil (<a href="https://docs.oshpark.com/services/four-layer">The absolute minimum size of via allowed by OSHPark</a>; who manufactured the PCB). Since we knew that it was 
+                   possible to layout the package given the requirements from OSHPark and the package itself we still had the problem 
+                   a physically soldering the package once you have the PCB and the package. The secret to cracking that was in circuit 
+                   board surface finishes! 
+                   <img style="float:left;" class="img-responsive" width=400 length=300 hspace="20" src="img/layout.JPG" alt="" style="border:ridge 5px black;"> 
+                </p>
+                <p style="text-align: left;">
+                  After doing research (and messing around with the settings on <a href="https://www.pcbway.com/orderonline.aspx">PCBWay’s quote calculator</a>) I found that there are multiple 
+                  surface finishes that you can get for the top layer of copper on your circuit board. The standard that is selected by 
+                  default is HASL (Hot Air Solder Leveling), which is simply another layer of solder that is usually wave soldered on the 
+                  copper of the blank PCB. The problem is that HASL is NOT completely flat! The wave soldering generates a surface that has 
+                  collections of gunked solder that sticks together. These gunks are usually removed with hot air knives that go over the 
+                  board, but still not flat enough to layout a package like the FBGA-484 without some balls of the package being lifted off 
+                  the contacts. I looked for alternatives to the HASL surface finish I’ll list all that I found for completeness. 
+                </p>
+                <h3 style="text-align: left;"><b>HASL (Hot Air Solder Leveling)</b></h3>
+                <p style="text-align: left;">
+                  The standard, typically SnPb (Tin Lead) based, finish that leaves a surface too uneven for large BGA packages. Also available in lead-free variants.
+                </p>
+                <h3 style="text-align: left;"><b>ENIG (Electroless Nickel Immersion Gold)</b></h3>
+                <p style="text-align: left;">
+                  Electroless nickel plating covered with a thin layer of immersion gold, which protects the nickel from oxidation. It is possible for a ‘black-pad’ 
+                  nickel phosphorus to form during the electroless nickel plating step, more specifically due to the solder mask sulfur substances leaching into the 
+                  plating bath. This creates an excellent flat surface that is perfect for large BGA packages. This ultimately is what my Design Group went with. 
+                </p>
+                <h3 style="text-align: left;"><b>OSP (Organic Solderability Preservatives)</b></h3>
+                <p style="text-align: left;">
+                  This finish is a safer step above lead-free finishes. It is a water-based organic compound that selectively bonds to copper and protects the copper 
+                  until soldering. So cool! However, you usually only see this finish if it is legal requirement from a government.
+                </p>
+                <h3 style="text-align: left;"><b>Hard Gold</b></h3>
+                <p style="text-align: left;">
+                  <img style="float:right;" class="img-responsive" width=400 length=300 hspace="20" src="img/multimeter.jpg" alt="" style="border:ridge 5px black;">
+                  Everything is solid gold. Extremely durable and recommended for uses in high contact areas. Think areas like the on a multimeter rotary, where the 
+                  contacts are brushing against it for its entire lifetime.
+                </p>
+                <h3 style="text-align: left;"><b>IAg (Immersion Silver)</b></h3>
+                <p style="text-align: left;">
+                  Comparable in surface level to HASL but with the chemical advantages of silver (best conductor). Also, chemical disadvantages of silver, surface 
+                  quickly oxidizes.
+                </p>
+                <h3 style="text-align: left;"><b>ENEPIG (Electroless Nickel Electroless Palladium Immersion Gold)</b></h3>
+                <p style="text-align: left;">
+                  Think ENIG++. This surface finish adds the Palladium Immersion which prevents the ‘black pad’ effect that is a great drawback to the ENIG surface 
+                  finish. Also retains the near perfect flat finish of ENIG. My Design Group did not go with this finish due to cost and unavailability.
+                </p>
+                <h3 style="text-align: left;"><b>Plain Copper</b></h3>
+                <p style="text-align: left;">
+                  Not used for industry applications anymore. Tarnishes too quickly. Popular among DIYers for chemical etching with copper clad plates and ferric 
+                  chloride (I would love to try this someday :^))
+                </p>
+                <p style="text-align: left;">
+                  We went with ENIG finish and the why and some of the how of this part of the project was worked out. Layout of the circuit board was completed in 
+                  Autodesk EAGLE CAD as a 4-layer board layered (from top to bottom) Signals/Power/GND/Signals. The circuit board was sent to <a href="https://oshpark.com">OSHPark</a> for it to be manufactured. 
+                </p>
+                <p style="text-align: left;">
+                  <img style="float:left;" class="img-responsive" width=400 length=300 hspace="20" src="img/bga.jpg" alt="" style="border:ridge 5px black;">
+                  For populating the circuit board, Matthew Shuman (an instructor at Oregon State University) instructed our group to expand our experience by reaching 
+                  out to <a href="https://www.hitekquality.com">Hi-Tek Electronics</a> in Salem, Oregon to get our board professionally populated. This was elected to be an excellent choice since it would offer
+                   a chance to work with industry professionals (an experience that very few students get) and certainty that the BGA package was laid out correctly. 
+                </p>
+                <p style="text-align: left;">
+                  <img style="float:right;" class="img-responsive" width=400 length=300 hspace="20" src="img/sdram.jpg" alt="" style="border:ridge 5px black;">
+                  Interfacing with Hi-Tek was very simple, I sent them a BOM, Gerber files, centroid file (describes the physical location of parts on the board), the 
+                  components we had on-hand and Hi-Tek handled the rest. Thanks to efforts from Matthew Shuman and the general manager at Hi-Tek, Darryl Gordon. My Design Group got 
+                  the opportunity to see the x-rays and process they go though when populating a board. I asked how I could have improved my board to make their job 
+                  easier. The answer was simply: fiducial markers. It is standard to include markers on three of the four corners of your board so a person and machine 
+                  can quickly determine the orientation of the board. Would never have know otherwise, this was an extremely valuable experience.
+                </p>
+                <p style="text-align: left;">
+                  <img style="float:left;" class="img-responsive" width=400 length=300 hspace="20" src="img/siliconwafer.jpg" alt="" style="border:ridge 5px black;">
+                  There was a lot of excitement when we first got out PCBs back from Hi-Tek and it was time for testing. Plugging the PCB in to the 9V jack I was kicking 
+                  myself seeing every design flaw. Wishing I had added 0 Ohm resistors to disconnect assemblies so they could be tested individually, seeing that there 
+                  wasn’t enough clearance for the upper right screw to fit with the terminal block connector in-place, wishing I made a 3mm hole that connected to ground 
+                  rather than a straight drill, get rid of the debug header on the clock nodes for fear of it interrupting the signal. I can go on forever.
+                </p>
+                <p style="text-align: left;">
+                  However, plugging in the PCB yielded the 5V nominal LED to glow appropriately. Checking all of the voltage probes yielded the correct voltages. Programming 
+                  the FPGA in Quartus was…when the rush ended. We got the error: Error: JTAG Chain Detected / Error: No device detected. The debugging process would begin 
+                  from there, but time was up. We believe that the problem either stems from the header pins on the clock generator making the clock signal unreadable 
+                  (was difficult to get a perfect square wave on the oscilloscope using the debug headers) or the JTAG programmer that we were using was not genuine. 
+                  It was a cheap Chinese clone of the Altera USB Blaster. After further reading of forums, many other people who purchases the same JTAG programmer got 
+                  the exact same error despite having a board that worked with the official USB Blaster.
+                  <img style="float:right;" class="img-responsive" width=400 length=300 hspace="20" src="img/expo.jpg" alt="" style="border:ridge 5px black;">
+                </p>
+                <p style="text-align: left;">
+                  The project timeline must fit in an Oregon State University term (10 weeks) and by the time design, CAD, manufacturing, coding, etc. was done 9 weeks had passed. 
+                  We had a working project thanks to development with the DE-10 Lite boards that were give to us in ECE 272: Digital Logic Design Lab (also featured the MAX 10 FPGA) 
+                  and using the peripherals on the Max 10 Pollen Board that had header pins that could be connected to the GPIO of the DE-10. We presented our project with pride at 
+                  the Junior Design Expo and acknowledged that we had probably learned more than most groups due to the scope of our project.
+                </p>
+                <p>
+                  <video muted autoplay controls loop class="img-responsive" src="img/work.mp4" type="video/mp4" alt="" style="border:ridge 2px black;">
+                  </video>
+                </p>
+                <p style="text-align: left;">
+                  In the end, thanks the great effort from everyone in the Design Group, Matthew Shuman, Hi-Tek Electronics we made our Music Box for the Junior Design Expo. Here is 
+                  the presentation video that we made to accompany the project to showcase how everyone contributed.
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5E8o3TLcO80" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p style="text-align: left;">
+                    Here’s the <a href="https://github.com/Muellegr/MusicBox-Quartus-Project">GitHub link</a> to the project repository (including EAGLE files). 
+                </p>
+                <p style="text-align: left;">
+                  Here’s the <a href="img/Max_10_Pollen_Board_User_Manual.pdf">User Manual</a> I wrote up so someone else could pick up this board and start using it with Quartus. 
+                </p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-10 col-lg-offset-1">
+				<p><img class="img-responsive" src="img/isoBrdfull.jpeg" alt=""></p>
+                <p> Here’s the Bill of Materials for the Max 10 Pollen Board.
+                  <table>
+                    <thead><tr><th title="Field #1">BOM Item #</th>
+                    <th title="Field #2">Item Name</th>
+                    <th title="Field #3">Quantity</th>
+                    <th title="Field #4">Price/Unit</th>
+                    <th>Total Cost</th>
+                    </tr></thead>
+                    <tbody><tr>
+                    <td>1</td>
+                    <td>0.1uF 0805 Capacitor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>4pF 0805 Capacitor</td>
+                    <td>2</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>3</td>
+                    <td>0.01uF (10nF) 0805 Capacitor</td>
+                    <td>6</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>4</td>
+                    <td>1nF 0805 Capacitor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>5</td>
+                    <td>10uF 0805 Capacitor</td>
+                    <td>2</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>6</td>
+                    <td>1uF 0805 Capacitor</td>
+                    <td>9</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>7</td>
+                    <td>4.7uF 0805 Capacitor</td>
+                    <td>5</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>8</td>
+                    <td>0.47uF 0805 Capacitor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>9</td>
+                    <td>0.39uF 0805 Capacitor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>10</td>
+                    <td>1uF Tant Capacitor</td>
+                    <td>1</td>
+                    <td>$0.02 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>11</td>
+                    <td>MBR360G DO201-15</td>
+                    <td>1</td>
+                    <td>$0.50 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>12</td>
+                    <td>220ohm Ferrite Bead 0603</td>
+                    <td>2</td>
+                    <td>$0.01</td>
+                    </tr>
+                    <tr>
+                    <td>13</td>
+                    <td>30ohm Ferrite Bead 0603</td>
+                    <td>3</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>14</td>
+                    <td>INA332AIDGKR SOP65</td>
+                    <td>1</td>
+                    <td>$1.61 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>15</td>
+                    <td>LM4991MAX_NOPB</td>
+                    <td>1</td>
+                    <td>$1.35 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>16</td>
+                    <td>LM2576HVS-12</td>
+                    <td>1</td>
+                    <td>$6.57 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>17</td>
+                    <td>IS42S16400J-7TLI</td>
+                    <td>1</td>
+                    <td>$1.83 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>18</td>
+                    <td>CDCE937PWRG4</td>
+                    <td>1</td>
+                    <td>$4.12 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>19</td>
+                    <td>AD5320IDBVR</td>
+                    <td>1</td>
+                    <td>$6.25 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>20</td>
+                    <td>ADS7868IDBVR</td>
+                    <td>1</td>
+                    <td>$1.55 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>21</td>
+                    <td>MCP1726T-ADJE_SN</td>
+                    <td>4</td>
+                    <td>$0.68 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>22</td>
+                    <td>REF3125AQDBZRQ1</td>
+                    <td>1</td>
+                    <td>$2.81 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>23</td>
+                    <td>2x5 Shrouded Connector</td>
+                    <td>2</td>
+                    <td>$0.00 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>24</td>
+                    <td>2x20 Shrouded Connector</td>
+                    <td>1</td>
+                    <td>$0.00 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>25</td>
+                    <td>40-pin Male Header Pins</td>
+                    <td>1</td>
+                    <td>$0.00 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>26</td>
+                    <td>SRR1260-101M 100uH Inductor</td>
+                    <td>1</td>
+                    <td>$1.25 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>27</td>
+                    <td>3mm LED</td>
+                    <td>1</td>
+                    <td>$0.05 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>28</td>
+                    <td>Electret Microphone</td>
+                    <td>1</td>
+                    <td>$0.50 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>29</td>
+                    <td>24MHz CTS406</td>
+                    <td>1</td>
+                    <td>$0.98 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>30</td>
+                    <td>2.2k 0805 Resistor</td>
+                    <td>3</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>31</td>
+                    <td>20k 0805 Resistor</td>
+                    <td>2</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>32</td>
+                    <td>4.7k 0805 Resistor</td>
+                    <td>7</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>33</td>
+                    <td>18.2 0805 Resistor</td>
+                    <td>3</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>34</td>
+                    <td>10k 0805 Resistor</td>
+                    <td>2</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>35</td>
+                    <td>1 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>36</td>
+                    <td>1k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>37</td>
+                    <td>220 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>38</td>
+                    <td>510k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>39</td>
+                    <td>100k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>40</td>
+                    <td>150k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>41</td>
+                    <td>510k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>42</td>
+                    <td>86k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>43</td>
+                    <td>12k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>44</td>
+                    <td>40k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>45</td>
+                    <td>20k 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>46</td>
+                    <td>0.4 0805 Resistor</td>
+                    <td>1</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>47</td>
+                    <td>2.1mm DC Barrel Jack Connector</td>
+                    <td>1</td>
+                    <td>$0.40 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>48</td>
+                    <td>10k 10mm Potentiometer</td>
+                    <td>1</td>
+                    <td>$0.20 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>49</td>
+                    <td>10M50DAF484C7G FPGA</td>
+                    <td>1</td>
+                    <td>$150.80 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>50</td>
+                    <td>E3.5-10 Electrolytic Capacitor 1000uF</td>
+                    <td>1</td>
+                    <td>$0.89 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>51</td>
+                    <td>E5-6 Electrolytic Capacitor 100uF</td>
+                    <td>1</td>
+                    <td>$0.35 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>52</td>
+                    <td>220 Ohm Resistor</td>
+                    <td>21</td>
+                    <td>$0.05 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>53</td>
+                    <td>Single 3mm RGB LED</td>
+                    <td>6</td>
+                    <td>$0.01 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>54</td>
+                    <td>RGB LED Strip</td>
+                    <td>1</td>
+                    <td>$5.99 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>55</td>
+                    <td>8 Ohm 3W Speaker </td>
+                    <td>1</td>
+                    <td>$3.91 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>56</td>
+                    <td>9V AC-DC Power Jack </td>
+                    <td>1</td>
+                    <td>$13.90 </td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> </td>
+                    <td>$210.28</td>
+                    </tr>
+                    </tbody></table>
+                  </p>
+				<p><bt>This article was last edited: <a href="#">March 2020</a></bt></p>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>Contact Info</h4>
+					<p>
+						tristanluther28@gmail.com<br/>
+						<br/>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="https://github.com/tristanluther28">Github</a><br/>
+						<a href="https://www.thingiverse.com/tristanluther28/designs">Thingiverse</a><br/>
+						<a href="https://www.linkedin.com/in/tristan-luther-a05bb2155/">LinkedIn</a><br/>
+						<a href="https://www.codecademy.com/luthert">Codecademy</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>Howdy There!</h4>
+					<p>Not much down here besides external links. Check out all of the cool stuff up above!</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
